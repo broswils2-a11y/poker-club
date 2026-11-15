@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Private Poker Club</title>
+<meta name="description" content="A private, invitation-only social Texas Hold'em community for adults 21+.">
+<meta name="theme-color" content="#0B0D13">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="hero.jpg">
+
+<!-- Meta Pixel Code (replace YOUR_PIXEL_ID) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+  :root{
+    --bg:#0B0D13; --card:#12151F; --card-2:#171B27; --line:rgba(245,176,65,.18);
+    --gold:#F5B041; --gold-2:#FFD27A; --green:#2ECC71; --text:#F2F3F7; --muted:#9AA1B2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(245,176,65,.12),transparent 70%),
+                     radial-gradient(ellipse 60% 40% at 50% 110%,rgba(46,204,113,.07),transparent 70%);
+    background-attachment:fixed;
+    color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;line-height:1.5;
+    min-height:100vh;padding:20px 16px calc(28px + env(safe-area-inset-bottom));
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:480px;margin:0 auto}
+  .card{
+    background:linear-gradient(180deg,var(--card-2),var(--card));
+    border:1px solid var(--line);border-radius:22px;padding:18px 18px 24px;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+  }
+  .hero{
+    display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:16px;
+    border:1px solid rgba(245,176,65,.55);
+    box-shadow:0 0 0 1px rgba(245,176,65,.08),0 0 22px rgba(245,176,65,.28),0 10px 30px rgba(0,0,0,.45);
+    background:#0e1018;
+  }
+  .badge{
+    display:table;margin:20px auto 0;padding:7px 14px;border-radius:999px;
+    font:700 11.5px/1 'Montserrat',sans-serif;letter-spacing:.08em;color:var(--gold);
+    background:rgba(245,176,65,.1);border:1px solid rgba(245,176,65,.35);
+  }
+  h1{
+    font:900 clamp(30px,9vw,40px)/1.05 'Montserrat',sans-serif;text-align:center;letter-spacing:.01em;
+    margin:16px 0 10px;
+    background:linear-gradient(180deg,var(--gold-2),var(--gold) 60%,#c98a22);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .sub-badge{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font:800 12px/1 'Montserrat',sans-serif;letter-spacing:.28em;color:var(--green);
+  }
+  .sub-badge::before,.sub-badge::after{content:"";height:1px;width:34px;background:linear-gradient(90deg,transparent,var(--green))}
+  .sub-badge::after{transform:scaleX(-1)}
+  .subhead{text-align:center;color:var(--muted);font-size:15px;font-weight:500;margin:14px 0 20px}
+  .features{list-style:none;display:grid;gap:10px}
+  .features li{
+    display:flex;gap:12px;align-items:flex-start;padding:13px 14px;border-radius:14px;
+    background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);font-size:14.5px;color:#D5D8E0;
+  }
+  .features .ico{font-size:20px;line-height:1.2;flex:none}
+  .features b{display:block;font-family:'Montserrat',sans-serif;font-weight:700;color:var(--text);font-size:15px;margin-bottom:2px}
+  .urgency{
+    margin:20px 0 16px;padding:12px 14px;border-radius:12px;text-align:center;font-size:14px;font-weight:600;
+    color:var(--gold-2);background:rgba(245,176,65,.07);border:1px dashed rgba(245,176,65,.4);
+  }
+  .cta{
+    display:flex;align-items:center;justify-content:center;width:100%;min-height:62px;padding:16px 18px;
+    border-radius:16px;text-decoration:none;text-align:center;
+    font:800 clamp(14px,4.2vw,16.5px)/1.25 'Montserrat',sans-serif;letter-spacing:.03em;color:#06210F;
+    background:linear-gradient(180deg,#4BE38B,var(--green) 55%,#22a85a);
+    box-shadow:0 0 0 1px rgba(46,204,113,.5),0 8px 26px rgba(46,204,113,.38);
+    animation:pulse 2.2s ease-in-out infinite;transition:transform .12s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .cta:active{transform:scale(.98)}
+  .cta:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 1px rgba(46,204,113,.5),0 8px 26px rgba(46,204,113,.35)}
+    50%{box-shadow:0 0 0 1px rgba(46,204,113,.7),0 8px 40px rgba(46,204,113,.65)}
+  }
+  @media (prefers-reduced-motion:reduce){.cta{animation:none}}
+  footer{text-align:center;color:#6F7586;font-size:12px;line-height:1.6;margin-top:22px;padding:0 6px}
+  footer nav{margin-top:10px;display:flex;justify-content:center;gap:18px}
+  footer button{background:none;border:0;color:var(--muted);font:inherit;text-decoration:underline;cursor:pointer;padding:4px}
+  footer button:hover{color:var(--gold)}
+
+  /* Modals */
+  .modal{position:fixed;inset:0;z-index:50;display:none;align-items:flex-end;justify-content:center;
+    background:rgba(4,5,8,.75);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);padding:16px}
+  .modal.open{display:flex}
+  .modal-box{
+    width:100%;max-width:480px;max-height:82vh;overflow-y:auto;background:var(--card-2);
+    border:1px solid var(--line);border-radius:18px;padding:22px 20px 20px;color:#CDD1DB;font-size:14px;
+    animation:up .22s ease-out;
+  }
+  @media (min-width:600px){.modal{align-items:center}}
+  @keyframes up{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+  .modal-box h2{font:800 18px/1.2 'Montserrat',sans-serif;color:var(--gold);margin-bottom:12px}
+  .modal-box h3{font:700 14px/1.3 'Montserrat',sans-serif;color:var(--text);margin:14px 0 4px}
+  .modal-box p{margin-bottom:8px}
+  .modal-close{
+    margin-top:16px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);
+    background:rgba(245,176,65,.08);color:var(--gold);font:700 14px 'Montserrat',sans-serif;cursor:pointer;
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="card">
+    <img class="hero" src="hero.jpg" alt="Private poker table" width="960" height="600" fetchpriority="high" decoding="async">
+
+    <span class="badge">🔞 21+ PRIVATE GAMING COMMUNITY</span>
+    <h1>PRIVATE POKER CLUB</h1>
+    <div class="sub-badge">BY INVITATION ONLY</div>
+    <p class="subhead">Competitive Texas Hold'em • VIP Tables • Serious Players Only</p>
+
+    <ul class="features">
+      <li><span class="ico">♠️</span><span><b>Private VIP Tables</b>Access secure, exclusive tables with dedicated hosting.</span></li>
+      <li><span class="ico">🏆</span><span><b>Daily Tournaments</b>Test your skills and compete against top-tier players.</span></li>
+      <li><span class="ico">🔥</span><span><b>24/7 High-Level Action</b>Jump into active, competitive games anytime, day or night.</span></li>
+      <li><span class="ico">🤝</span><span><b>Dedicated Support</b>Our host is always online to ensure a seamless experience.</span></li>
+    </ul>
+
+    <p class="urgency">🔒 Invitation-only. Limited spots available for verified players this week.</p>
+
+    <a id="cta" class="cta" href="https://t.me/toninis" target="_blank" rel="noopener">💬 MESSAGE HOST ON TELEGRAM TO APPLY</a>
+  </section>
+
+  <footer>
+    <p>21+ • Private Community • Play Responsibly • Social &amp; Club Play Only. No real money gambling is offered or required on this site.</p>
+    <nav>
+      <button type="button" data-open="privacy">Privacy Policy</button>
+      <button type="button" data-open="terms">Terms of Service</button>
+    </nav>
+  </footer>
+</main>
+
+<div class="modal" id="privacy" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+  <div class="modal-box">
+    <h2 id="privacy-title">Privacy Policy</h2>
+    <p>This page is an informational landing page for a private social poker community. We respect your privacy.</p>
+    <h3>Information we collect</h3>
+    <p>We do not collect personal information through forms on this page. If you contact our host on Telegram, any information you share is handled under Telegram's own privacy policy.</p>
+    <h3>Cookies &amp; analytics</h3>
+    <p>This site uses the Meta Pixel to measure ad performance (for example, page visits and button clicks). Meta may use cookies or similar technologies. You can manage ad preferences in your Facebook/Instagram settings.</p>
+    <h3>Age requirement</h3>
+    <p>This community is intended only for adults aged 21 and older. We do not knowingly interact with minors.</p>
+    <h3>Contact</h3>
+    <p>For privacy questions, message our host on Telegram.</p>
+    <button class="modal-close" type="button" data-close>Close</button>
+  </div>
+</div>
+
+<div class="modal" id="terms" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+  <div class="modal-box">
+    <h2 id="terms-title">Terms of Service</h2>
+    <h3>Eligibility</h3>
+    <p>You must be 21 years of age or older to join this community.</p>
+    <h3>Social play only</h3>
+    <p>This is a social entertainment community. No real money gambling is offered or required on this site, and no prizes of monetary value are awarded. Success at social gaming does not imply future success at real-money gambling.</p>
+    <h3>Conduct</h3>
+    <p>Members agree to treat others with respect. Cheating, collusion, harassment, or abusive behavior will result in removal.</p>
+    <h3>Membership</h3>
+    <p>Membership is by invitation and may be granted, declined, or revoked at the host's discretion.</p>
+    <h3>Play responsibly</h3>
+    <p>Please play for fun, take breaks, and set personal time limits.</p>
+    <h3>Disclaimer</h3>
+    <p>This community is not affiliated with, endorsed by, or sponsored by Meta, Facebook, Instagram, or Telegram.</p>
+    <button class="modal-close" type="button" data-close>Close</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Lead tracking: fire safely, never block navigation
+  var cta=document.getElementById('cta'), fired=false;
+  cta.addEventListener('click',function(){
+    if(fired) return; fired=true;
+    try{ if(typeof window.fbq==='function'){ fbq('track','Lead'); } }catch(e){}
+  });
+
+  // Modals
+  var lastFocus=null;
+  function open(id){var m=document.getElementById(id);if(!m)return;lastFocus=document.activeElement;
+    m.classList.add('open');document.body.style.overflow='hidden';m.querySelector('[data-close]').focus();}
+  function close(m){m.classList.remove('open');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
+  document.querySelectorAll('[data-open]').forEach(function(b){
+    b.addEventListener('click',function(){open(b.getAttribute('data-open'));});
+  });
+  document.querySelectorAll('.modal').forEach(function(m){
+    m.addEventListener('click',function(e){if(e.target===m||e.target.hasAttribute('data-close'))close(m);});
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){var m=document.querySelector('.modal.open');if(m)close(m);}
+  });
+})();
+</script>
+</body>
+</html>
